@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
   res.send("LMS Backend is running!");
 });
 
+const PORT = process.env.PORT || 5000; 
 app.listen(PORT, () => {
   console.log(`The server is running : http://localhost:${PORT}`);
 });
