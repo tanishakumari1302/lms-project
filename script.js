@@ -170,7 +170,7 @@ async function handleLogin() {
   const password = document.getElementById("password").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://lms-backend-3rwf.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -203,7 +203,7 @@ async function handleSignup() {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/signup", {
+    const response = await fetch("https://lms-backend-3rwf.onrender.com/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -229,7 +229,7 @@ async function handleAdminLogin() {
   const password = document.getElementById("adminPassword").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/admin-login", {
+    const response = await fetch("https://lms-backend-3rwf.onrender.com/api/auth/admin-login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
@@ -254,7 +254,7 @@ async function handleFacultyLogin() {
   const password = document.getElementById("facultyPassword").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/faculty-login", {
+    const response = await fetch("https://lms-backend-3rwf.onrender.com/api/auth/faculty-login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })
@@ -293,7 +293,7 @@ function handleFacultyLogout() {
 
 
 if (courseListDiv) {
-  fetch("http://localhost:5000/api/courses")
+  fetch("https://lms-backend-3rwf.onrender.com/api/courses")
     .then(response => response.json())
     .then(courses => {
       courses.forEach(course => {
@@ -336,7 +336,7 @@ if (courseTitleE1) {
   const params = new URLSearchParams(window.location.search);
   const courseId = params.get("id");
 
-  fetch(`http://localhost:5000/api/courses/${courseId}`)
+  fetch(`https://lms-backend-3rwf.onrender.com/api/courses/${courseId}`)
     .then(response => response.json())
     .then(course => {
       courseTitleE1.textContent = course.title;
@@ -377,7 +377,7 @@ if (quizTitleEl) {
   const params = new URLSearchParams(window.location.search);
   const courseId = params.get("id");
 
-  fetch(`http://localhost:5000/api/quizzes/course/${courseId}`)
+  fetch(`https://lms-backend-3rwf.onrender.com/api/quizzes/course/${courseId}`)
     .then(response => response.json())
     .then(quiz => {
       currentQuiz = quiz;
@@ -701,7 +701,7 @@ const assignmentCourseSelect = document.getElementById("assignmentCourseSelect")
 const assignmentsTable = document.getElementById("assignmentsTable");
 
 if (assignmentCourseSelect) {
-  fetch("http://localhost:5000/api/courses")
+  fetch("https://lms-backend-3rwf.onrender.com/api/courses")
     .then(response => response.json())
     .then(courses => {
       courses.forEach(c => {
@@ -713,7 +713,7 @@ if (assignmentCourseSelect) {
 }
 
 function renderAssignmentsTable() {
-  fetch("http://localhost:5000/api/assignments")
+  fetch("https://lms-backend-3rwf.onrender.com")
     .then(response => response.json())
     .then(assignments => {
       assignmentsTable.innerHTML = `
@@ -746,7 +746,7 @@ function createAssignment() {
     return;
   }
 
-  fetch("http://localhost:5000/api/assignments", {
+  fetch("https://lms-backend-3rwf.onrender.com/api/assignments", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ courseId, title, dueDate })
