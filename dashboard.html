@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MYLMS</span>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="gradebook.html">Gradebook</a>
+            <a href="attendance.html">Attendance</a>
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+  <h2>Welcome back, <span id="studentNameSpan">Tanisha</span> 👋</h2>
+  <p>Here is an overview of your learning journey.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number" id="statTotalCourses">-</span>
+      <span class="stat-label">Enrolled Courses</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" id="statCompleted">-</span>
+      <span class="stat-label">Lessons Completed</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">2</span>
+      <span class="stat-label">Pending Assignments</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">85%</span>
+      <span class="stat-label">Average Score</span>
+    </div>
+  </div>
+
+  <h3 style="margin: 28px 0 14px;">My Courses</h3>
+  <div id="courseList"></div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

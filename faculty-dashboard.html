@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       z
+<body>
+  <nav class="navbar">
+    <span class="brand">📚 MyLMS Faculty</span>
+    <div>
+      <a href="faculty-dashboard.html">Dashboard</a>
+      <a href="upload-notes.html">Upload Notes</a>
+      <a href="create-assignment.html">Assignments</a>6
+      <a href="mark-attendance.html">Attendance</a>
+      <button onclick="handleFacultyLogout()">Logout</button>
+    </div>
+  </nav>
+
+    <div class="page-content">
+  <h2>Welcome, Faculty</h2>
+  <p>View an overview of your classes here.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-number" id="statMyStudents">-</span>
+      <span class="stat-label">Total Students</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" id="statMyAssignments">-</span>
+      <span class="stat-label">Assignments Created</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" id="statMyNotes">-</span>
+      <span class="stat-label">Notes Uploaded</span>
+    </div>
+  </div>
+
+  <h3 style="margin:28px 0 14px;">Quick Actions</h3>
+  <div class="role-grid">
+    <a href="upload-notes.html" class="role-card">
+      <span class="role-icon">📄</span>
+      <h3>Upload Notes</h3>
+      <p>Upload study materials for the students.</p>
+    </a>
+    <a href="create-assignment.html" class="role-card">
+      <span class="role-icon">📝</span>
+      <h3>Create Assignment</h3>
+      <p>Create a new assignment and set the due date.</p>
+    </a>
+    <a href="mark-attendance.html" class="role-card">
+      <span class="role-icon">✅</span>
+      <h3>Mark Attendance</h3>
+      <p>Mark the attendance for today's class.</p>
+    </a>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

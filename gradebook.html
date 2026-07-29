@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradebook</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MYLMS</span>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="gradebook.html">Gradebook</a>
+            <a href="attendance.html">Attendance</a>
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+    <h2>My Gradebook</h2>
+    <p>Semester performance overview.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" id="statAverage">-</span>
+        <span class="stat-label">Overall Average</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="statHighest">-</span>
+        <span class="stat-label">Highest Score</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="statTotalGraded">-</span>
+        <span class="stat-label">Items Graded</span>
+      </div>
+    </div>
+
+    <h3 style="margin:24px 0 14px;">Detailed Grades</h3>
+    <table id="gradeTable">
+      <tr>
+        <th>Course</th>
+        <th>Type</th>
+        <th>Score</th>
+        <th>Grade</th>
+      </tr>
+    </table>
+</div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

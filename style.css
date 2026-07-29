@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #1b2a4a;
+  --navy-dark: #121e38;
+  --gold: #b8863e;
+  --gold-light: #f0e2c8;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #16213e;
+  --text-muted: #6b7280;
+  --border: #e4e7ed;
+  --success: #2f9e44;
+  --success-bg: #e6f7ea;
+  --danger: #e03131;
+  --danger-bg: #fdebeb;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 4px 14px rgba(16, 24, 40, 0.07);
+  --shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  color: #fff;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.navbar .brand {
+  font-family: 'Lora', serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin-right: 22px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+  border-bottom-color: var(--gold);
+}
+
+.navbar button {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar button:hover {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+/* ---------- Login Page ---------- */
+.login-box {
+  background: var(--surface);
+  padding: 44px 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 340px;
+  text-align: center;
+  margin: 130px auto;
+  border-top: 4px solid var(--gold);
+  position: relative;
+}
+
+.login-box h2 {
+  margin-bottom: 6px;
+  font-size: 22px;
+}
+
+.login-box::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+  margin: 12px auto 24px;
+  border-radius: 2px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: #fff;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s ease;
+}
+
+.login-box button:hover {
+  background: var(--navy-dark);
+}
+
+#errorMsg, #adminErrorMsg, #facultyErrorMsg {
+  color: var(--danger);
+  margin-top: 10px;
+  font-size: 13px;
+  min-height: 16px;
+}
+
+/* ---------- Page Content ---------- */
+.page-content {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 0 24px;
+}
+
+.page-content h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.page-content p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.page-content a {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ---------- Course Cards ---------- */
+#courseList {
+  margin-top: 24px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.course-card {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 240px;
+  text-decoration: none !important;
+  color: inherit;
+  border: 1px solid var(--border);
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--gold);
+  text-decoration: none !important;
+}
+
+.course-card h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.course-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---------- Buttons ---------- */
+.page-content button,
+.page-content .btn {
+  background: var(--navy);
+  color: #fff !important;
+  border: none;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none !important;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 8px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.page-content button:hover,
+.page-content .btn:hover {
+  background: var(--navy-dark);
+  text-decoration: none !important;
+}
+
+.page-content button:active,
+.page-content .btn:active {
+  transform: scale(0.98);
+}
+
+.btn-small {
+  background: var(--danger) !important;
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+.btn-small:hover {
+  background: #c92a2a !important;
+}
+
+/* ---------- Forms (Admin/Faculty add-forms) ---------- */
+.add-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--surface);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.add-form input,
+.add-form select {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: var(--bg);
+  transition: border 0.2s ease;
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: #fff;
+}
+
+/* ---------- Tables (all: gradebook, attendance, students, faculty, courses, notes, assignments) ---------- */
+table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+th {
+  background: var(--navy);
+  color: #fff;
+  padding: 13px 18px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) td {
+  background: #fafbfc;
+}
+
+/* ---------- Status badges ---------- */
+.status-present {
+  color: var(--success);
+  background: var(--success-bg);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.status-absent {
+  color: var(--danger);
+  background: var(--danger-bg);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ---------- Quiz ---------- */
+.quiz-question {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.quiz-question h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+.quiz-question label {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+
+.quiz-question label:hover {
+  background: var(--gold-light);
+}
+
+#resultBox {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-top: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 20px 0 10px;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: 'Lora', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.level-tag {
+  display: inline-block;
+  background: var(--gold-light);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.course-meta {
+  font-size: 12px !important;
+  color: var(--text-muted) !important;
+  margin: 8px 0 !important;
+}
+
+.progress-bar {
+  background: var(--border);
+  border-radius: 20px;
+  height: 7px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-fill {
+  background: var(--gold);
+  height: 100%;
+  border-radius: 20px;
+}
+
+.progress-text {
+  font-size: 11px !important;
+  color: var(--text-muted) !important;
+  margin-top: 6px !important;
+}
+
+#courseList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  width: auto;
+}
+
+/* Course detail page */
+.course-hero {
+  background: var(--surface);
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.course-meta-row {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+.course-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.course-main, .course-sidebar {
+  background: var(--surface);
+  padding: 22px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.lesson-list, .notes-list {
+  list-style: none;
+}
+
+.lesson-list li, .notes-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.lesson-list li:last-child, .notes-list li:last-child {
+  border-bottom: none;
+}
+
+.done {
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* Grade badges */
+.grade-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.grade-A { background: var(--success-bg); color: var(--success); }
+.grade-B { background: #e7f0ff; color: #1c64f2; }
+.grade-C { background: var(--gold-light); color: var(--gold); }
+.grade-D { background: var(--danger-bg); color: var(--danger); }
+
+/* Home / role selection page */
+.home-wrapper {
+  max-width: 900px;
+  margin: 90px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.home-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.home-header p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.role-card {
+  background: var(--surface);
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  border-bottom: 4px solid var(--gold);
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none !important;
+}
+
+.role-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.role-card h3 {
+  margin-bottom: 8px;
+}
+
+.role-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 700px) {
+  .course-layout {
+    grid-template-columns: 1fr;
+  }
+}

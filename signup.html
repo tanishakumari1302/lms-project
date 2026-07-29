@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="login-box">
+        <h2>Student Sign Up</h2>
+
+        <input type="text" id="signupName" placeholder="Full Name" />
+        <input type="email" id="signupEmail" placeholder="Email" />
+        <input type="password" id="signupPassword" placeholder="Password" />
+        <button onclick="handleSignup()">Sign Up</button>
+
+        <p id="signupErrorMsg" style="color: var(--danger); font-size: 13px; margin-top: 10px;"></p>
+        <p style="margin-top: 14px; font-size: 13px;">Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MyLMS Admin</span>
+        <div>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="manage-students.html">Students</a>
+            <a href="manage-faculty.html">Faculty</a>
+            <a href="manage-courses.html">Courses</a>
+            <button onclick="handleAdminLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <h2>Manage Courses</h2>
+
+        <div class="add-form">
+            <input type="text" id="newCourseTitle" placeholder="Course Title" />
+            <input type="text" id="newCourseDesc" placeholder="Description" />
+            <button onclick="addCourse()">Add Course</button>
+        </div>
+
+        <table id="coursesTable">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

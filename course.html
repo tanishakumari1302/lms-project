@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart LMS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MyLMS</span>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="gradebook.html">Gradebook</a>
+            <a href="attendance.html">Attendance</a>
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="course-hero">
+    <span class="level-tag" id="courseLessonCount"></span>
+    <h2 id="courseTitle">Loading...</h2>
+    <p id="courseDesc"></p>
+    <div class="course-meta-row">
+        <span>👨‍🏫 <span id="courseInstructor"></span></span>
+    </div>
+</div>
+        </div>
+
+        <div class="course-layout">
+            <div class="course-main">
+                <h3>Lessons</h3>
+                <ul class="lesson-list" id="lessonList"></ul>
+
+                <h3 style="margin-top:24px;">Study Materials</h3>
+                <ul class="notes-list" id="notesList"></ul>
+            </div>
+
+            <div class="course-sidebar">
+                <h3>Actions</h3>
+                <a id="quizLink" href="#" class="btn" style="display:block; text-align:center;">📝 Take Quiz</a>
+                <a id="assignmentLink" href="#" class="btn" style="display:block; text-align:center;">📤 Submit Assignment</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>

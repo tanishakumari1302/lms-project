@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Assignment </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MyLMS Faculty </span>
+        <div>
+            <a href="faculty-dashboard.html">Dashboard </a>
+            <a href="upload-notes.html">Upload Notes</a>
+            <a href="create-assignment.html">Assignment </a>
+            <a href="mark-attendance.html">Attendance</a>
+            <button onclick="handleFaculyLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <h2>Create Assignment</h2>
+
+        <div class="add-form">
+            <select id="assignmentCourseSelect"></select>
+            <input type="text" id="assignmentTitleInput" placeholder="Assignment Title" />
+            <input type="text" id="assignmentDueDate" placeholder="Due Date (e.g. 30 july 2026)" />
+            <button onclick="createAssignment()">Create</button>
+        </div>
+
+        <table id="assignmentsTable">
+            <tr>
+                <th>Course</th>
+                <th>Title</th>
+                <th>Due Date </th>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

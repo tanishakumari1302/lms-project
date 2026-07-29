@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MyLMS Faculty</span>
+        <div>
+            <a href="faculty-dashboard.html">Dashboard</a>
+            <a href="upload-notes.html">Upload Notes </a>
+            <a href="create-assignment.html">Assignments </a>
+            <a href="mark-attendance.html">Attendance </a>
+            <button onclick="handleFacultyLogout()">Logout</button>
+        </div>
+    </nav>
+    
+    <div class="page-content">
+        <h2>Mark Attendance</h2>
+
+        <table id="markAttendanceTable">
+            <tr>
+                <th>Student Name </th>
+                <th>Email </th>
+                <th>Status</th>
+            </tr>
+        </table>
+        <button onclick="saveAttendance()" style="margin-top: 16px;">Save Attendance</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

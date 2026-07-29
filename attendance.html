@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <span class="brand">📚 MyLMS</span>
+        <div>
+            <a href="dashbord.html">Dashboard</a>
+            <a href="gradebook.html">Gradebook</a>
+            <a href="attendance.html">Attendance</a>
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <h2>My Attendance</h2>
+        <table id="attendanceTable">
+            <tr>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
