@@ -597,26 +597,36 @@ if (facultyTable) {
   renderFaculty();
 }
 
+
+
 const coursesTable = document.getElementById("coursesTable");
+const BACKEND_URL = "https://lms-backend-3rwf.onrender.com";
 
 function renderCourses() {
-  coursesTable.innerHTML = `
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Action</th>
-    </tr>
-  `;
+  fetch(`${BACKEND_URL}/api/courses`)
+    .then(response => response.json())
+    .then(courses => {
+      coursesTable.innerHTML = `
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      `;
 
-  COURSES.forEach(c => {
-    coursesTable.innerHTML += `
-      <tr>
-        <td>${c.title}</td>
-        <td>${c.description}</td>
-        <td><button class="btn-small" onclick="deleteCourse(${c.id})">Delete</button></td>
-      </tr>
-    `;
-  });
+      courses.forEach(c => {
+        coursesTable.innerHTML += `
+          <tr>
+            <td>${c.title}</td>
+            <td>${c.description}</td>
+            <td><button class="btn-small" onclick="deleteCourse('${c._id}')">Delete</button></td>
+          </tr>
+        `;
+      });
+    })
+    .catch(error => {
+      coursesTable.innerHTML = "<tr><td colspan='3'>Courses load nahi ho paaye.</td></tr>";
+    });
 }
 
 function addCourse() {
@@ -624,22 +634,37 @@ function addCourse() {
   const desc = document.getElementById("newCourseDesc").value;
 
   if (!title || !desc) {
-    alert("Fill in all the fields!");
+    alert("Sab fields bharo!");
     return;
   }
 
-  const newId = COURSES.length > 0 ? COURSES[COURSES.length - 1].id + 1 : 1;
-  COURSES.push({ id: newId, title: title, description: desc, lessons: [] });
-
-  renderCourses();
-  document.getElementById("newCourseTitle").value = "";
-  document.getElementById("newCourseDesc").value = "";
+  fetch(`${BACKEND_URL}/api/courses`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title, description: desc, instructor: "TBD", lessons: [], notes: [] })
+  })
+    .then(response => response.json())
+    .then(data => {
+      renderCourses();
+      document.getElementById("newCourseTitle").value = "";
+      document.getElementById("newCourseDesc").value = "";
+    })
+    .catch(error => {
+      alert("Course add nahi ho paya, backend check karo");
+    });
 }
 
 function deleteCourse(id) {
-  const index = COURSES.findIndex(c => c.id === id);
-  COURSES.splice(index, 1);
-  renderCourses();
+  fetch(`${BACKEND_URL}/api/courses/${id}`, {
+    method: "DELETE"
+  })
+    .then(response => response.json())
+    .then(data => {
+      renderCourses();
+    })
+    .catch(error => {
+      alert("Course delete nahi ho paya");
+    });
 }
 
 if (coursesTable) {
