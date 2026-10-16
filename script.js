@@ -720,8 +720,6 @@ function uploadNote() {
     renderNotesTable();
     document.getElementById("noteTitle").value = "";
 }
-
-
 const assignmentCourseSelect = document.getElementById("assignmentCourseSelect");
 const assignmentsTable = document.getElementById("assignmentsTable");
 

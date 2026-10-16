@@ -61,4 +61,18 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.post("/:id/notes", async (req, res) => {
+  try {
+    const course = await Course.findById(req.params.id);
+    if (!course) {
+      return res.status(404).json({ message: "Course not found!" });
+    }
+    course.notes.push({ title: req.body.title });
+    await course.save();
+    res.status(201).json({ message: "Note added!", course });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
 module.exports = router;
